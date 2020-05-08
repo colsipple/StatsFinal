@@ -23,3 +23,10 @@ Mode <- function(x) {
 }
 propClassMode <- aggregate(classVsValue[,2], list(classVsValue$CLASSDSCRP),
 Mode)
+#Create a visual model of the raw data
+png("rawPlot.png")
+plot(classVsValue$CLASSDSCRP, classVsValue$CNTASSDVAL, main="Property Classes
+and their Values", xlab="Property Class", ylab="Value (USD)")
+dev.close()
+#Calculate mean of all records
+sampleMean <- mean(rawTable$CNTASSDVAL)
